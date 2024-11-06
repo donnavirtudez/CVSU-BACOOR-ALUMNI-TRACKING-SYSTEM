@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALUMNI TRACKING SYSTEM - ADMIN CHANGE PASSWORD</title>
+    <link rel="icon" type="image/png" href="../pics/CVSU.png" />
+    <link rel="stylesheet" href="../css/changepass.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <button class="toggle-sidebar">☰</button>
+      <nav class="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+          <li><a href="../html/dashboard.html">View Alumni</a></li>
+          <li><a href="../html/add-alumni.html">Add Alumni</a></li>
+          <li><a href="../html/changepass.html">Change Password</a></li>
+          <li>
+            <a href="../index.html" onclick="return confirmLogout();"
+              >Log out</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <main class="main-content">
+        <header>
+          <h1>CAVITE STATE UNIVERSITY BACOOR CAMPUS</h1>
+        </header>
+        <section id="add">
+          <h2 id="alumni">Change Password</h2>
+          <form onsubmit="return confirmChange();">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value="Email"
+              required
+              readonly
+            />
+            <input
+              type="password"
+              name="password_old"
+              placeholder="Old Password"
+              required
+            />
+            <input
+              type="password"
+              name="password_new"
+              placeholder="New Password"
+              required
+            />
+            <input
+              type="password"
+              name="password_confirm"
+              placeholder="Confirm Password"
+              required
+            />
+            <button type="submit">Change</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const toggleButton = document.querySelector(".toggle-sidebar");
+      const sidebar = document.querySelector(".sidebar");
+
+      toggleButton.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+      });
+
+      function confirmLogout() {
+        return confirm("Are you sure you want to log out?");
+      }
+
+      function confirmChange() {
+        return confirm("Are you sure you want to change your password?");
+        window.location.href = "../html/changepass.html";
+      }
+    </script>
+  </body>
+</html>

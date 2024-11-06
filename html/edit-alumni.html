@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALUMNI TRACKING SYSTEM - EDIT ALUMNI</title>
+    <link rel="icon" type="image/png" href="../pics/CVSU.png" />
+    <link rel="stylesheet" href="../css/edit-alumni.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <button class="toggle-sidebar">☰</button>
+      <nav class="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+          <li><a href="../html/dashboard.html">View Alumni</a></li>
+          <li><a href="../html/add-alumni.html">Add Alumni</a></li>
+          <li><a href="../html/changepass.html">Change Password</a></li>
+          <li><a href="#" onclick="confirmLogout()">Log out</a></li>
+        </ul>
+      </nav>
+      <main class="main-content">
+        <header>
+          <h1>CAVITE STATE UNIVERSITY BACOOR CAMPUS</h1>
+        </header>
+        <section id="add">
+          <h2 id="alumni">Edit Alumni</h2>
+          <form id="editForm" action="../html/edit-alumni.html" method="POST">
+            <input type="hidden" name="id" value="STUDENT_ID_PLACEHOLDER" />
+            <input
+              type="text"
+              name="firstname"
+              placeholder="Firstname"
+              value="Fiirstname"
+              required
+            />
+            <input
+              type="text"
+              name="lastname"
+              placeholder="Lastname"
+              value="Lastname"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value="Email"
+              required
+              readonly
+            />
+            <input
+              type="text"
+              name="gradyear"
+              placeholder="Graduation Year"
+              value="Graduation Year"
+              required
+            />
+            <select name="program" required>
+              <option value="disabled" selected>Program</option>
+              <option value="Computer Science">
+                Bachelor of Science in Computer Science
+              </option>
+              <option value="Information Technology">
+                Bachelor of Science in Information Technology
+              </option>
+              <option value="Psychology">
+                Bachelor of Science in Psychology
+              </option>
+              <option value="Hospitality Management">
+                Bachelor of Science in Hospitality Management
+              </option>
+              <option value="Education - English">
+                Bachelor of Science in Education - English
+              </option>
+              <option value="Education - Math">
+                Bachelor of Science in Education - Math
+              </option>
+              <option value="Criminology">
+                Bachelor of Science in Criminology
+              </option>
+              <option value="Business Management">
+                Bachelor of Science in Business Management
+              </option>
+            </select>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              value="Phone"
+            />
+            <select name="employment_status" required>
+              <option value="disabled" selected>Employment Status</option>
+              <option value="Employed">Employed</option>
+              <option value="Unemployed">Unemployed</option>
+              <option value="Self-Employed">Self-Employed</option>
+              <option value="Student">Student</option>
+            </select>
+            <button type="button" onclick="confirmSave()">Save</button>
+            <br />
+            <button
+              type="button"
+              class="back-button"
+              onclick="window.location.href='../html/dashboard.html';"
+            >
+              Back
+            </button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      function confirmSave() {
+        if (confirm("Are you sure you want to save these changes?")) {
+          document.getElementById("editForm").submit();
+          window.location.href = "../html/edit-alumni.html";
+        }
+      }
+
+      function confirmLogout() {
+        if (confirm("Are you sure you want to log out?")) {
+          window.location.href = "../index.html";
+        }
+      }
+
+      const toggleButton = document.querySelector(".toggle-sidebar");
+      const sidebar = document.querySelector(".sidebar");
+
+      toggleButton.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALUMNI TRACKING SYSTEM - FORGOT PASSWORD</title>
+    <link rel="icon" type="image/png" href="../pics/CVSU.png" />
+    <link rel="stylesheet" href="../css/forgotpass.css" />
+    <script>
+      function showAlert(message) {
+        alert(message);
+      }
+
+      function handlePasswordReset(event) {
+        event.preventDefault();
+        window.location.href = "../html/forgotpass.html";
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="left-div">
+        <img src="../pics/CVSU.png" alt="CVSU" class="logo" />
+        <h1 class="schoolname">CAVITE STATE UNIVERSITY BACOOR CAMPUS</h1>
+      </div>
+      <div class="right-div">
+        <form onsubmit="handlePasswordReset(event)">
+          <h1 class="alumni">ALUMNI TRACKING SYSTEM</h1>
+          <input type="email" name="email" placeholder="Email" required />
+          <input
+            type="password"
+            name="new_password"
+            placeholder="New Password"
+            required
+          />
+          <input
+            type="password"
+            name="confirm_password"
+            placeholder="Confirm Password"
+            required
+          />
+          <button type="submit">Reset Password</button>
+          <br />
+          <br />
+          <a class="link" href="../index.html">Back</a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
